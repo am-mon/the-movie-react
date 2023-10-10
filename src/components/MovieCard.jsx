@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import dummy_movie_pic_long from "../assets/dummy_movie_pic_long.png";
+import dummy_movie_pic_long from "/dummy_movie_pic_long.png";
 
 const MovieCard = ({ movie, className }) => {
   return (

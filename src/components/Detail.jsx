@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import dummy_movie_pic_long from "../assets/dummy_movie_pic_long.png";
+import dummy_movie_pic_long from "/dummy_movie_pic_long.png";
 import Section from "./Section";
 import YouTube from "react-youtube";
 import Loader from "./Loader";
@@ -190,7 +190,7 @@ const Detail = () => {
                                   />
                                 ) : (
                                   <img
-                                    src={"/src/assets/cast-dummy.png"}
+                                    src={"/cast-dummy.png"}
                                     className="rounded w-full"
                                   />
                                 )}
