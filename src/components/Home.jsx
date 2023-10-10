@@ -64,7 +64,7 @@ const Home = () => {
           </Section>
         ) : (
           <>
-            <h3 className="text-3xl mb-5">Genres:</h3>
+            <h3 className="text-xl md:text-3xl mb-3 md:mb-5">Genres:</h3>
             {/* {currentGenre}
             <br />
             {page} */}
@@ -106,7 +106,7 @@ const Home = () => {
           </>
         )}
         <div ref={ref} className="pt-5">
-          <h3 className="text-3xl mb-5">
+          <h3 className="text-xl md:text-3xl mb-3 md:mb-5">
             {getGenre ? getGenre.name : "All"}
             <span className="text-xl"> ( {count} )</span>
           </h3>
