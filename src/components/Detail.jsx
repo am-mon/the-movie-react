@@ -111,9 +111,11 @@ const Detail = () => {
                   ""
                 )}
               </div>
-              <div className="md:w-[66%] text-xl">
+              <div className="md:w-[66%] md:text-xl">
                 <div>
-                  <h1 className="text-5xl font-bold mb-7">{movie.title}</h1>
+                  <h1 className="text-4xl md:text-5xl font-bold mb-7">
+                    {movie.title}
+                  </h1>
                   <div>{movie.overview}</div>
                   <div className="mt-7 flex flex-wrap">
                     <div className="w-[100%] xl:w-[50%] box-border pr-5">
@@ -133,7 +135,9 @@ const Detail = () => {
                         <li>Runtime: {movie.runtime}</li>
                         <li>Vote Count: {movie.vote_count}</li>
                       </ul>
-                      <h3 className="text-3xl font-medium mb-5">Companies</h3>
+                      <h3 className="text-3xl md:text-3xl font-medium mb-5">
+                        Companies
+                      </h3>
                       <ul className="text-xl list-disc ml-5 mb-7">
                         {movie.production_companies?.map((item, index) => {
                           return (
@@ -151,7 +155,9 @@ const Detail = () => {
                       </ul>
                     </div>
                     <div className="w-[100%]  xl:w-[50%]">
-                      <h3 className="text-3xl font-medium mb-5">Genres</h3>
+                      <h3 className="text-3xl md:text-3xl font-medium mb-5">
+                        Genres
+                      </h3>
                       <ul className="text-xl list-disc ml-5 mb-7">
                         {movie.genres?.map((item, index) => {
                           return (
@@ -161,7 +167,7 @@ const Detail = () => {
                           );
                         })}
                       </ul>
-                      <h3 className="text-3xl font-medium mb-5">
+                      <h3 className="text-3xl md:text-3xl font-medium mb-5">
                         Spoken Languages
                       </h3>
                       <ul className="text-xl list-disc ml-5 mb-7">
@@ -178,7 +184,9 @@ const Detail = () => {
                   <div>
                     {cast.length > 0 ? (
                       <>
-                        <h3 className="text-3xl font-medium mb-5">Cast</h3>
+                        <h3 className="text-3xl md:text-3xl font-medium mb-5">
+                          Cast
+                        </h3>
                         <ul className="mb-10 grid grid-cols-4 gap-1 md:grid-cols-6 lg:grid-cols-8">
                           {cast?.map((cast) => {
                             return (

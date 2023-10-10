@@ -12,6 +12,7 @@ const Nav = () => {
   useEffect(() => {
     setSearchValue("");
     setShowSearchAlert(false);
+    setSearchToggle(true);
   }, [location]);
 
   const onSubmitHandler = (e) => {
@@ -26,7 +27,7 @@ const Nav = () => {
 
   return (
     <>
-      <div className="bg-emerald-600 text-white box-border py-6 ">
+      <div className="bg-emerald-600 text-white box-border py-3 lg:py-6">
         <div className="container mx-auto px-3 flex justify-between items-center flex-col md:flex-row">
           <div className="w-[100%] md:w-auto text-left flex justify-between items-center">
             <h1 className="font-title-font-01 text-4xl md:text-5xl font-normal">
@@ -43,14 +44,14 @@ const Nav = () => {
             <div className={`md:block ${searchToggle ? "hidden" : "block"}  `}>
               <form
                 onSubmit={onSubmitHandler}
-                className="flex items-center text-base mt-5"
+                className="flex items-center text-base mt-3 md:mt-0"
               >
                 <input
                   type="text"
                   placeholder="Search"
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
-                  className="rounded text-black outline-0 h-[45px] px-3 w-[100%] md:min-w-[350px] leading-[45px]"
+                  className="rounded text-black outline-0 h-[45px] px-3 w-[100%] md:min-w-[350px] leading-[45px] outline-none"
                 />
                 {/* <input
                   type="submit"

@@ -39,10 +39,10 @@ const Home = () => {
 
   return (
     <>
-      <div className="flex">
-        {topBannerMovies?.slice(3, 7).map((movie) => {
+      <div className="flex flex-wrap">
+        {topBannerMovies?.slice(3, 6).map((movie) => {
           return (
-            <div key={movie.id} className="w-[25%]">
+            <div key={movie.id} className="w-[33.333%]">
               {movie.poster_path ? (
                 <Link to={`/detail/${movie.id}`}>
                   <img

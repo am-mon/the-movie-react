@@ -53,7 +53,7 @@ const Results = () => {
           {/* {totalSearchPages}
         <br />
         {searchPageNum} */}
-          <h1 className="text-4xl font-medium mb-10 text-center">
+          <h1 className="text-2xl md:text-4xl font-medium mb-10 text-center">
             Search Results for{" "}
             <span className="text-emerald-600">{searchKeyword}</span>
           </h1>
