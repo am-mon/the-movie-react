@@ -6,6 +6,7 @@ export const StateContextProvider = ({ children }) => {
   const [movieList, setMovieList] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+  const [count, setCount] = useState(0);
 
   const [topBannerMovies, setTopBannerMovies] = useState([]);
   const [genres, setGenres] = useState([]);
@@ -34,6 +35,7 @@ export const StateContextProvider = ({ children }) => {
     console.log(response);
     setMovieList(response.results);
     setTotalPages(response.total_pages);
+    setCount(response.total_results);
   };
 
   //Home Banner
@@ -66,6 +68,8 @@ export const StateContextProvider = ({ children }) => {
     setPage,
     totalPages,
     setTotalPages,
+    count,
+    setCount,
     topBannerMovies,
     setTopBannerMovies,
     genres,
