@@ -1,0 +1,44 @@
+ul.myPagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  li {
+    a {
+      width: 30px;
+      height: 30px;
+      background: rgb(52 211 153);
+      color: #fff;
+      margin: 5px;
+      text-align: center;
+      line-height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+    }
+    &:hover,
+    &.selected {
+      a {
+        background: rgb(4 120 87);
+      }
+    }
+  }
+}
+
+.search_alert {
+  display: none;
+  font-size: 14px;
+  margin-top: 5px;
+  &.active {
+    display: block;
+  }
+}
+
+.react_youtube {
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+}
