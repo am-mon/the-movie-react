@@ -47,7 +47,7 @@ const Home = () => {
                 <Link to={`/detail/${movie.id}`}>
                   <img
                     src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
-                    className="opacity-70"
+                    className="hover:opacity-70"
                   />
                 </Link>
               ) : (
@@ -68,11 +68,11 @@ const Home = () => {
             {/* {currentGenre}
             <br />
             {page} */}
-            <ul className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8 gap-2 md:gap-4 mb-5 text-base">
+            <ul className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-10 gap-2 md:gap-2 mb-5 text-base font-medium">
               <li
                 className={`bg-emerald-400 ${
                   !currentGenre ? "bg-emerald-700" : "bg-emerald-400"
-                }  hover:bg-emerald-700 text-white rounded text-center py-2 px2 box-border cursor-pointer font-medium`}
+                }  hover:bg-emerald-700 text-white rounded text-center py-2 px2 box-border cursor-pointer`}
                 //
                 onClick={() => {
                   setCurrentGenre();
@@ -91,7 +91,7 @@ const Home = () => {
                       currentGenre == genre.id
                         ? "bg-emerald-700"
                         : "bg-emerald-400"
-                    }  hover:bg-emerald-700 text-white rounded text-center py-2 px2 box-border cursor-pointer font-medium`}
+                    }  hover:bg-emerald-700 text-white rounded text-center py-2 px2 box-border cursor-pointer`}
                     onClick={() => {
                       setCurrentGenre(genre.id);
                       setPage(1);

@@ -114,7 +114,7 @@ const Detail = () => {
                   {movie.backdrop_path ? (
                     <img
                       src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-                      className="w-[100%] opacity-75 rounded"
+                      className="w-[100%] rounded"
                     />
                   ) : (
                     <>{/* <img src={dummy_movie_pic} /> */}</>
@@ -145,50 +145,63 @@ const Detail = () => {
                         <li>Runtime: {movie.runtime}</li>
                         <li>Vote Count: {movie.vote_count}</li>
                       </ul>
-                      <h3 className="text-3xl md:text-3xl font-medium mb-5">
-                        Companies
-                      </h3>
-                      <ul className="text-xl list-disc ml-5 mb-7">
-                        {movie.production_companies?.map((item, index) => {
-                          return (
-                            <li key={index}>
-                              <p>
-                                {item.name} ({item.origin_country})
-                              </p>
-                              {/* <img
+
+                      {movie?.production_companies?.length > 0 && (
+                        <>
+                          <h3 className="text-3xl md:text-3xl font-medium mb-5">
+                            Companies
+                          </h3>
+                          <ul className="text-xl list-disc ml-5 mb-7">
+                            {movie.production_companies?.map((item, index) => {
+                              return (
+                                <li key={index}>
+                                  <p>
+                                    {item.name} ({item.origin_country})
+                                  </p>
+                                  {/* <img
                             className="max-h-[70px] max-w-[150px] mb-3"
                             src={`https://image.tmdb.org/t/p/original/${item.logo_path}`}
                           /> */}
-                            </li>
-                          );
-                        })}
-                      </ul>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </>
+                      )}
                     </div>
                     <div className="w-[100%]  xl:w-[50%]">
-                      <h3 className="text-3xl md:text-3xl font-medium mb-5">
-                        Genres
-                      </h3>
-                      <ul className="text-xl list-disc ml-5 mb-7">
-                        {movie.genres?.map((item, index) => {
-                          return (
-                            <li key={index}>
-                              <p>{item.name}</p>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                      <h3 className="text-3xl md:text-3xl font-medium mb-5">
-                        Spoken Languages
-                      </h3>
-                      <ul className="text-xl list-disc ml-5 mb-7">
-                        {movie.spoken_languages?.map((item, index) => {
-                          return (
-                            <li key={index}>
-                              <p>{item.name}</p>
-                            </li>
-                          );
-                        })}
-                      </ul>
+                      {movie?.genres?.length > 0 && (
+                        <>
+                          <h3 className="text-3xl md:text-3xl font-medium mb-5">
+                            Genres
+                          </h3>
+                          <ul className="text-xl list-disc ml-5 mb-7">
+                            {movie.genres?.map((item, index) => {
+                              return (
+                                <li key={index}>
+                                  <p>{item.name}</p>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </>
+                      )}
+                      {movie?.spoken_languages?.length > 0 && (
+                        <>
+                          <h3 className="text-3xl md:text-3xl font-medium mb-5">
+                            Spoken Languages
+                          </h3>
+                          <ul className="text-xl list-disc ml-5 mb-7">
+                            {movie.spoken_languages?.map((item, index) => {
+                              return (
+                                <li key={index}>
+                                  <p>{item.name}</p>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </>
+                      )}
                     </div>
                   </div>
                   <div>
