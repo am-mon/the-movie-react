@@ -78,13 +78,22 @@ const Detail = () => {
       ) : (
         <>
           <div>
-            {movie.backdrop_path ? (
-              <img
-                src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-                className="w-[100%] opacity-75"
-              />
+            {video ? (
+              <div className="">
+                <div className="custom-youtube">
+                  <YouTube
+                    videoId={video.key}
+                    className="react_youtube"
+                    opts={{
+                      playerVars: {
+                        controls: 0,
+                      },
+                    }}
+                  />
+                </div>
+              </div>
             ) : (
-              <>{/* <img src={dummy_movie_pic} /> */}</>
+              ""
             )}
           </div>
           <Section>
@@ -101,15 +110,16 @@ const Detail = () => {
                   </>
                 )}
 
-                {video ? (
-                  <div className="mt-5">
-                    <div className="custom-youtube">
-                      <YouTube videoId={video.key} className="react_youtube" />
-                    </div>
-                  </div>
-                ) : (
-                  ""
-                )}
+                <div className="mt-5">
+                  {movie.backdrop_path ? (
+                    <img
+                      src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+                      className="w-[100%] opacity-75 rounded"
+                    />
+                  ) : (
+                    <>{/* <img src={dummy_movie_pic} /> */}</>
+                  )}
+                </div>
               </div>
               <div className="md:w-[66%] md:text-xl">
                 <div>
