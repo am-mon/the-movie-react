@@ -49,3 +49,24 @@ ul.myPagination {
     height: 100%;
   }
 }
+
+//Home Top Banner
+.custom-top-bnr-item {
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button.react-multiple-carousel__arrow {
+  background: rgb(52 211 153) !important;
+  @media only screen and (max-width: 600px) {
+    min-width: 30px;
+    min-height: 30px;
+    &::before {
+      font-size: 15px;
+    }
+  }
+  &:hover {
+    background: rgb(4 120 87) !important;
+  }
+}

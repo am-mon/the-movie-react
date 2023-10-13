@@ -5,6 +5,8 @@ import ReactPaginate from "react-paginate";
 import { StateContextCustom } from "../context/StateContext";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const Home = () => {
   const {
@@ -37,12 +39,43 @@ const Home = () => {
   });
   // console.log(getGenre ? getGenre.name : "All");
 
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+      slidesToSlide: 4, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 3, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
+
   return (
     <>
-      <div className="flex flex-wrap">
-        {topBannerMovies?.slice(3, 6).map((movie) => {
+      <Carousel
+        swipeable={false}
+        draggable={false}
+        responsive={responsive}
+        ssr={true} // means to render carousel on server-side.
+        infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={6000}
+        keyBoardControl={true}
+        transitionDuration={2000}
+        containerClass="carousel-container"
+        // removeArrowOnDeviceType={["tablet", "mobile"]}
+        itemClass="custom-top-bnr-item"
+      >
+        {topBannerMovies?.slice(1, 22).map((movie) => {
           return (
-            <div key={movie.id} className="w-[33.333%]">
+            <div key={movie.id}>
               {movie.poster_path ? (
                 <Link to={`/detail/${movie.id}`}>
                   <img
@@ -56,7 +89,7 @@ const Home = () => {
             </div>
           );
         })}
-      </div>
+      </Carousel>
       <Section>
         {isLoading ? (
           <Section>

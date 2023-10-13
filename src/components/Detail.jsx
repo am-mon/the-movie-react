@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import dummy_movie_pic_long from "/dummy_movie_pic_long.png";
 import Section from "./Section";
 import YouTube from "react-youtube";
@@ -213,16 +213,17 @@ const Detail = () => {
                         <ul className="mb-10 grid grid-cols-4 gap-1 md:grid-cols-6 lg:grid-cols-8">
                           {cast?.map((cast) => {
                             return (
-                              <li key={cast.id}>
+                              <li key={cast.id} id={`cast_${cast.id}`}>
+                                {" "}
                                 {cast.profile_path ? (
                                   <img
                                     src={`https://image.tmdb.org/t/p/original/${cast.profile_path}`}
-                                    className="rounded"
+                                    className="rounded w-full hover:opacity-75"
                                   />
                                 ) : (
                                   <img
                                     src={"/cast-dummy.png"}
-                                    className="rounded w-full"
+                                    className="rounded w-full hover:opacity-75"
                                   />
                                 )}
                                 <p className="mt-1 text-sm text-center">

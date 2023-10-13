@@ -7,6 +7,7 @@ import "./styles/custom.scss";
 import Detail from "./components/Detail";
 import Footer from "./components/Footer";
 import Results from "./components/Results";
+import Cast from "./components/Cast";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="/results/:searchKeyword" element={<Results />} />
+        {/* <Route path="/cast/:castId" element={<Cast />} /> */}
       </Routes>
       <Footer />
     </>
