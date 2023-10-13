@@ -86,7 +86,7 @@ const Home = () => {
                 ) : (
                   ""
                 )}
-                <p className="text-white font-medium text-base text-center p-3 absolute bottom-0 left-0 right-0 bg-emerald-400/[.7] shadow-lg shadow-emerald-500/50 m-2">
+                <p className="text-white font-light text-2xl text-center p-3 absolute bottom-0 left-0 right-0 bg-black/[.5] shadow-lg shadow-emerald-500/50">
                   {movie.title}
                 </p>{" "}
               </Link>
