@@ -66,9 +66,9 @@ const Home = () => {
         ssr={true} // means to render carousel on server-side.
         infinite={true}
         autoPlay={true}
-        autoPlaySpeed={6000}
+        autoPlaySpeed={4000}
         keyBoardControl={true}
-        transitionDuration={2000}
+        transitionDuration={500}
         containerClass="carousel-container"
         // removeArrowOnDeviceType={["tablet", "mobile"]}
         itemClass="custom-top-bnr-item"
