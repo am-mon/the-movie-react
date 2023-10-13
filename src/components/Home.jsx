@@ -76,16 +76,20 @@ const Home = () => {
         {topBannerMovies?.slice(1, 22).map((movie) => {
           return (
             <div key={movie.id}>
-              {movie.poster_path ? (
-                <Link to={`/detail/${movie.id}`}>
+              {" "}
+              <Link to={`/detail/${movie.id}`}>
+                {movie.poster_path ? (
                   <img
                     src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
                     className="hover:opacity-70"
                   />
-                </Link>
-              ) : (
-                ""
-              )}
+                ) : (
+                  ""
+                )}
+                <p className="text-white font-medium text-base text-center p-3 absolute bottom-0 left-0 right-0 bg-emerald-400/[.7] shadow-lg shadow-emerald-500/50 m-2">
+                  {movie.title}
+                </p>{" "}
+              </Link>
             </div>
           );
         })}
