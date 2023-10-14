@@ -4,22 +4,8 @@ import dummy_movie_pic_long from "/dummy_movie_pic_long.png";
 import Section from "./Section";
 import YouTube from "react-youtube";
 import Loader from "./Loader";
+import Share from "./Share";
 
-import {
-  EmailShareButton,
-  FacebookShareButton,
-  TelegramShareButton,
-  TwitterShareButton,
-  WhatsappShareButton,
-} from "react-share";
-
-import {
-  EmailIcon,
-  FacebookIcon,
-  TelegramIcon,
-  TwitterIcon,
-  WhatsappIcon,
-} from "react-share";
 import { StateContextCustom } from "../context/StateContext";
 
 const Detail = () => {
@@ -239,40 +225,7 @@ const Detail = () => {
                       ""
                     )}
                   </div>
-                  <div className="mt-5 mb-10 flex items-center">
-                    <span className="mr-2">Share: </span>
-                    <EmailShareButton
-                      url={`${window.location}`}
-                      subject={movie.title}
-                      className="mr-2 hover:opacity-70"
-                    >
-                      <EmailIcon size={35} round={true} />
-                    </EmailShareButton>
-                    <FacebookShareButton
-                      url={`${window.location}`}
-                      className="mr-2 hover:opacity-70"
-                    >
-                      <FacebookIcon size={35} round={true} />
-                    </FacebookShareButton>
-                    <TelegramShareButton
-                      url={`${window.location}`}
-                      className="mr-2 hover:opacity-70"
-                    >
-                      <TelegramIcon size={35} round={true} />
-                    </TelegramShareButton>
-                    <TwitterShareButton
-                      url={`${window.location}`}
-                      className="mr-2 hover:opacity-70"
-                    >
-                      <TwitterIcon size={35} round={true} />
-                    </TwitterShareButton>
-                    <WhatsappShareButton
-                      url={`${window.location}`}
-                      className="mr-2 hover:opacity-70"
-                    >
-                      <WhatsappIcon size={35} round={true} />
-                    </WhatsappShareButton>
-                  </div>
+                  <Share title={movie.title} />
                 </div>
               </div>
             </div>

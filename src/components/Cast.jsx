@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import MovieCard from "./MovieCard";
 import { StateContextCustom } from "../context/StateContext";
 import Loader from "./Loader";
+import Share from "./Share";
 
 const Cast = () => {
   const { castId } = useParams();
@@ -85,6 +86,7 @@ const Cast = () => {
                 )}
               </ul>
               <p>{castInfo?.biography}</p>
+              <Share title={castInfo?.name} />
             </div>
           </div>
           <div>
