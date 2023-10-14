@@ -214,21 +214,22 @@ const Detail = () => {
                           {cast?.map((cast) => {
                             return (
                               <li key={cast.id} id={`cast_${cast.id}`}>
-                                {" "}
-                                {cast.profile_path ? (
-                                  <img
-                                    src={`https://image.tmdb.org/t/p/original/${cast.profile_path}`}
-                                    className="rounded w-full hover:opacity-75"
-                                  />
-                                ) : (
-                                  <img
-                                    src={"/cast-dummy.png"}
-                                    className="rounded w-full hover:opacity-75"
-                                  />
-                                )}
-                                <p className="mt-1 text-sm text-center">
-                                  {cast.name}
-                                </p>
+                                <Link to={`/cast/${cast.id}`}>
+                                  {cast.profile_path ? (
+                                    <img
+                                      src={`https://image.tmdb.org/t/p/original/${cast.profile_path}`}
+                                      className="rounded w-full hover:opacity-75"
+                                    />
+                                  ) : (
+                                    <img
+                                      src={"/cast-dummy.png"}
+                                      className="rounded w-full hover:opacity-75"
+                                    />
+                                  )}
+                                  <p className="mt-1 text-sm text-center">
+                                    {cast.name}
+                                  </p>
+                                </Link>
                               </li>
                             );
                           })}

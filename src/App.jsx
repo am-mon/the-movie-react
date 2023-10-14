@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path="/results/:searchKeyword" element={<Results />} />
-        {/* <Route path="/cast/:castId" element={<Cast />} /> */}
+        <Route path="/cast/:castId" element={<Cast />} />
       </Routes>
       <Footer />
     </>
