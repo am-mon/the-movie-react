@@ -10,6 +10,8 @@ const Cast = () => {
   const [moviesByCast, setMoviesByCast] = useState([]);
   const [castInfo, setCastInfo] = useState();
 
+  const [total, setTotal] = useState(0);
+
   const { isLoading, setIsLoading } = StateContextCustom();
 
   useEffect(() => {
@@ -29,6 +31,7 @@ const Cast = () => {
     console.log(response);
     // setMoviesByCast(response.results);
     console.log(response.total_pages);
+    setTotal(response.total_results);
 
     for (i; i <= response.total_pages; i++) {
       const data = await fetch(
@@ -86,7 +89,10 @@ const Cast = () => {
           </div>
           <div>
             <h3 className="text-3xl font-medium mb-5 md:mb-10">
-              {castInfo?.name}'s Movies
+              {castInfo?.name}'s Movies{" "}
+              <span className="text-xl block md:inline-block">
+                ({total} Results)
+              </span>
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-10 gap-4">
               {moviesByCast?.map((movie) => {

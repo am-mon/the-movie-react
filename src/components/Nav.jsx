@@ -48,7 +48,7 @@ const Nav = () => {
               >
                 <input
                   type="text"
-                  placeholder="Search"
+                  placeholder="Search..."
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
                   className="rounded text-black outline-0 h-[45px] px-3 w-[100%] md:min-w-[350px] leading-[45px] outline-none"
