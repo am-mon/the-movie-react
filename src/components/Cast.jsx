@@ -16,15 +16,14 @@ const Cast = () => {
   const { isLoading, setIsLoading } = StateContextCustom();
 
   useEffect(() => {
-    setIsLoading(true);
     fetchMoviesByCast();
     fetchCastInfo();
-    setIsLoading(false);
   }, []);
 
   let promises = [];
   let i = 1;
   const fetchMoviesByCast = async () => {
+    setIsLoading(true);
     const api = await fetch(
       `https://api.themoviedb.org/3/discover/movie?api_key=c05d1c927a4b60ec1fff7ff01f5c3d8d&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_cast=${castId}`
     );
@@ -42,6 +41,7 @@ const Cast = () => {
       console.log(new_response);
       setMoviesByCast((old) => [...old, ...new_response.results]);
     }
+    setIsLoading(false);
   };
 
   const fetchCastInfo = async () => {
